@@ -22,28 +22,13 @@ public class ContactsListActivity extends AppCompatActivity {
             new Contact("Kannan", "+919121522520")
     };
 
-    //private ArrayList<Contact> contactArrayList = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts_list);
 
-        /*
-        for (int index = 0; index < contacts.length; index++)
-            contactArrayList.add(contacts[index]);
-
-        for (Contact contact : contacts)
-            contactArrayList.add(contact);
-
-        contactArrayList.addAll(Arrays.asList(contacts));
-        */
-
-        //ArrayList<Contact> contactArrayList = new ArrayList<>(Arrays.asList(contacts));
-
+        //((ListView)findViewById(R.id.id_list_contacts)).setAdapter(new ContactsAdapter(this, contacts));
         ListView contactListView = (ListView)findViewById(R.id.id_list_contacts);
-        //ContactsAdapter contactsAdapter = new ContactsAdapter(this, new ArrayList<>(Arrays.asList(contacts)));
-        //contactListView.setAdapter(contactsAdapter);
         contactListView.setAdapter(new ContactsAdapter(this, contacts));
     }
 }
